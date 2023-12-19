@@ -1,0 +1,491 @@
+Analysis & Synthesis report for morseTranslator
+Tue Jul  4 23:29:27 2023
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |morseTranslator
+ 14. Parameter Settings for User Entity Instance: DivisorDeFrequencia:divide_lcd
+ 15. Parameter Settings for User Entity Instance: DivisorDeFrequencia:divide
+ 16. Parameter Settings for User Entity Instance: DivisorDeFrequencia:counter
+ 17. Parameter Settings for User Entity Instance: lcd2:comb_994
+ 18. Port Connectivity Checks: "lcd2:comb_994"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Jul  4 23:29:27 2023           ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Standard Edition ;
+; Revision Name                      ; morseTranslator                                 ;
+; Top-level Entity Name              ; morseTranslator                                 ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 567                                             ;
+;     Total combinational functions  ; 567                                             ;
+;     Dedicated logic registers      ; 215                                             ;
+; Total registers                    ; 215                                             ;
+; Total pins                         ; 31                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; morseTranslator    ; morseTranslator    ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                       ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                         ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; morseTranslator.v                ; yes             ; User Verilog HDL File  ; /home/aluno/Downloads/trabalho/morseTranslator.v     ;         ;
+; DivisorDeFrequencia.v            ; yes             ; User Verilog HDL File  ; /home/aluno/Downloads/trabalho/DivisorDeFrequencia.v ;         ;
+; lcd2.v                           ; yes             ; User Verilog HDL File  ; /home/aluno/Downloads/trabalho/lcd2.v                ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 567         ;
+;                                             ;             ;
+; Total combinational functions               ; 567         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 296         ;
+;     -- 3 input functions                    ; 89          ;
+;     -- <=2 input functions                  ; 182         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 414         ;
+;     -- arithmetic mode                      ; 153         ;
+;                                             ;             ;
+; Total registers                             ; 215         ;
+;     -- Dedicated logic registers            ; 215         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 31          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; reset~input ;
+; Maximum fan-out                             ; 111         ;
+; Total fan-out                               ; 2338        ;
+; Average fan-out                             ; 2.77        ;
++---------------------------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                   ;
++-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Entity Name         ; Library Name ;
++-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+---------------------+--------------+
+; |morseTranslator                    ; 567 (290)           ; 215 (75)                  ; 0           ; 0            ; 0       ; 0         ; 31   ; 0            ; |morseTranslator                                ; morseTranslator     ; work         ;
+;    |DivisorDeFrequencia:counter|    ; 50 (50)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |morseTranslator|DivisorDeFrequencia:counter    ; DivisorDeFrequencia ; work         ;
+;    |DivisorDeFrequencia:divide_lcd| ; 45 (45)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |morseTranslator|DivisorDeFrequencia:divide_lcd ; DivisorDeFrequencia ; work         ;
+;    |DivisorDeFrequencia:divide|     ; 45 (45)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |morseTranslator|DivisorDeFrequencia:divide     ; DivisorDeFrequencia ; work         ;
+;    |lcd2:comb_994|                  ; 137 (137)           ; 43 (43)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |morseTranslator|lcd2:comb_994                  ; lcd2                ; work         ;
++-------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                         ;
++-----------------------------------------+--------------------------------------------------+
+; Register name                           ; Reason for Removal                               ;
++-----------------------------------------+--------------------------------------------------+
+; lcd2:comb_994|LCD_RW                    ; Stuck at GND due to stuck port data_in           ;
+; morse_character[6]                      ; Merged with morse_character[5]                   ;
+; morse_character[7]                      ; Stuck at GND due to stuck port data_in           ;
+; count[14,15]                            ; Stuck at GND due to stuck port data_in           ;
+; DivisorDeFrequencia:divide_lcd|count[0] ; Merged with DivisorDeFrequencia:counter|count[0] ;
+; DivisorDeFrequencia:divide|count[0]     ; Merged with DivisorDeFrequencia:counter|count[0] ;
+; lcd2:comb_994|LCD_DB[7]                 ; Stuck at GND due to stuck port data_in           ;
+; count[13]                               ; Stuck at GND due to stuck port data_in           ;
+; Total Number of Removed Registers = 9   ;                                                  ;
++-----------------------------------------+--------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                             ;
++--------------------+---------------------------+----------------------------------------+
+; Register name      ; Reason for Removal        ; Registers Removed due to This Register ;
++--------------------+---------------------------+----------------------------------------+
+; morse_character[7] ; Stuck at GND              ; lcd2:comb_994|LCD_DB[7]                ;
+;                    ; due to stuck port data_in ;                                        ;
+; count[14]          ; Stuck at GND              ; count[13]                              ;
+;                    ; due to stuck port data_in ;                                        ;
++--------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 215   ;
+; Number of registers using Synchronous Clear  ; 28    ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 14    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; lcd2:comb_994|flag_rst                 ; 28      ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |morseTranslator|count[2]                  ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |morseTranslator|morse_character[5]        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |morseTranslator|count_dot_dash[9]         ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |morseTranslator|index[1]                  ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; Yes        ; |morseTranslator|lcd2:comb_994|LCD_DB[4]   ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |morseTranslator|lcd2:comb_994|SUBSTATE[0] ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |morseTranslator|morse_buffer              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |morseTranslator ;
++---------------------+-------+---------------------------------------------------+
+; Parameter Name      ; Value ; Type                                              ;
++---------------------+-------+---------------------------------------------------+
+; DEFINE_DOT_DASH     ; 248   ; Signed Integer                                    ;
+; DEFINE_SPACE_LETTER ; 2553  ; Signed Integer                                    ;
++---------------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DivisorDeFrequencia:divide_lcd ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; DIV_VALUE      ; 50    ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DivisorDeFrequencia:divide ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; DIV_VALUE      ; 100   ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DivisorDeFrequencia:counter ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; DIV_VALUE      ; 7000  ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lcd2:comb_994 ;
++----------------+----------------------+--------------------+
+; Parameter Name ; Value                ; Type               ;
++----------------+----------------------+--------------------+
+; t_40ns         ; 00000000000000000001 ; Unsigned Binary    ;
+; t_250ns        ; 00000000000000000001 ; Unsigned Binary    ;
+; t_42us         ; 00000000000000101010 ; Unsigned Binary    ;
+; t_100us        ; 00000000000001100100 ; Unsigned Binary    ;
+; t_1640us       ; 00000000011001101000 ; Unsigned Binary    ;
+; t_4100us       ; 00000001000000000100 ; Unsigned Binary    ;
+; t_15000us      ; 00000011101010011000 ; Unsigned Binary    ;
+; t_TESTus       ; 11110100001001000000 ; Unsigned Binary    ;
+; SETUP          ; 00111000             ; Unsigned Binary    ;
+; DISP_ON        ; 00001100             ; Unsigned Binary    ;
+; ALL_ON         ; 00001111             ; Unsigned Binary    ;
+; ALL_OFF        ; 00001000             ; Unsigned Binary    ;
+; CLEAR          ; 00000001             ; Unsigned Binary    ;
+; ENTRY_N        ; 00000110             ; Unsigned Binary    ;
+; HOME           ; 00000010             ; Unsigned Binary    ;
+; C_SHIFT_L      ; 00010000             ; Unsigned Binary    ;
+; C_SHIFT_R      ; 00010100             ; Unsigned Binary    ;
+; D_SHIFT_L      ; 00011000             ; Unsigned Binary    ;
+; D_SHIFT_R      ; 00011100             ; Unsigned Binary    ;
++----------------+----------------------+--------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd2:comb_994"                                                                                                                                                                           ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                                                            ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; OPER       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (3 bits) it drives.  The 29 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; OPER[2..1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; OPER[0]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; RDY        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                           ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 31                          ;
+; cycloneiii_ff         ; 215                         ;
+;     ENA               ; 14                          ;
+;     SCLR              ; 28                          ;
+;     SLD               ; 1                           ;
+;     plain             ; 172                         ;
+; cycloneiii_lcell_comb ; 569                         ;
+;     arith             ; 153                         ;
+;         2 data inputs ; 120                         ;
+;         3 data inputs ; 33                          ;
+;     normal            ; 416                         ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 56                          ;
+;         3 data inputs ; 56                          ;
+;         4 data inputs ; 296                         ;
+;                       ;                             ;
+; Max LUT depth         ; 9.60                        ;
+; Average LUT depth     ; 4.65                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Standard Edition
+    Info: Processing started: Tue Jul  4 23:29:16 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off morseTranslator -c morseTranslator
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file morseTranslator.v
+    Info (12023): Found entity 1: morseTranslator File: /home/aluno/Downloads/trabalho/morseTranslator.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file DivisorDeFrequencia.v
+    Info (12023): Found entity 1: DivisorDeFrequencia File: /home/aluno/Downloads/trabalho/DivisorDeFrequencia.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lcd2.v
+    Info (12023): Found entity 1: lcd2 File: /home/aluno/Downloads/trabalho/lcd2.v Line: 26
+Warning (10227): Verilog HDL Port Declaration warning at lcd2.v(40): data type declaration for "DATA" declares packed dimensions but the port declaration declaration does not File: /home/aluno/Downloads/trabalho/lcd2.v Line: 40
+Info (10499): HDL info at lcd2.v(30): see declaration for object "DATA" File: /home/aluno/Downloads/trabalho/lcd2.v Line: 30
+Warning (10227): Verilog HDL Port Declaration warning at lcd2.v(41): data type declaration for "OPER" declares packed dimensions but the port declaration declaration does not File: /home/aluno/Downloads/trabalho/lcd2.v Line: 41
+Info (10499): HDL info at lcd2.v(31): see declaration for object "OPER" File: /home/aluno/Downloads/trabalho/lcd2.v Line: 31
+Critical Warning (10846): Verilog HDL Instantiation warning at morseTranslator.v(162): instance has no name File: /home/aluno/Downloads/trabalho/morseTranslator.v Line: 162
+Info (12127): Elaborating entity "morseTranslator" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at morseTranslator.v(40): truncated value with size 32 to match size of target (16) File: /home/aluno/Downloads/trabalho/morseTranslator.v Line: 40
+Warning (10230): Verilog HDL assignment warning at morseTranslator.v(82): truncated value with size 32 to match size of target (16) File: /home/aluno/Downloads/trabalho/morseTranslator.v Line: 82
+Warning (10230): Verilog HDL assignment warning at morseTranslator.v(105): truncated value with size 32 to match size of target (4) File: /home/aluno/Downloads/trabalho/morseTranslator.v Line: 105
+Warning (10230): Verilog HDL assignment warning at morseTranslator.v(107): truncated value with size 32 to match size of target (4) File: /home/aluno/Downloads/trabalho/morseTranslator.v Line: 107
+Warning (10230): Verilog HDL assignment warning at morseTranslator.v(117): truncated value with size 32 to match size of target (16) File: /home/aluno/Downloads/trabalho/morseTranslator.v Line: 117
+Info (12128): Elaborating entity "DivisorDeFrequencia" for hierarchy "DivisorDeFrequencia:divide_lcd" File: /home/aluno/Downloads/trabalho/morseTranslator.v Line: 16
+Info (12128): Elaborating entity "DivisorDeFrequencia" for hierarchy "DivisorDeFrequencia:divide" File: /home/aluno/Downloads/trabalho/morseTranslator.v Line: 17
+Info (12128): Elaborating entity "DivisorDeFrequencia" for hierarchy "DivisorDeFrequencia:counter" File: /home/aluno/Downloads/trabalho/morseTranslator.v Line: 18
+Info (12128): Elaborating entity "lcd2" for hierarchy "lcd2:comb_994" File: /home/aluno/Downloads/trabalho/morseTranslator.v Line: 162
+Warning (10036): Verilog HDL or VHDL warning at lcd2.v(51): object "mod" assigned a value but never read File: /home/aluno/Downloads/trabalho/lcd2.v Line: 51
+Warning (10230): Verilog HDL assignment warning at lcd2.v(161): truncated value with size 32 to match size of target (20) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 161
+Warning (10230): Verilog HDL assignment warning at lcd2.v(186): truncated value with size 32 to match size of target (4) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 186
+Warning (10230): Verilog HDL assignment warning at lcd2.v(209): truncated value with size 32 to match size of target (2) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 209
+Warning (10230): Verilog HDL assignment warning at lcd2.v(222): truncated value with size 32 to match size of target (4) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 222
+Warning (10230): Verilog HDL assignment warning at lcd2.v(247): truncated value with size 32 to match size of target (2) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 247
+Warning (10230): Verilog HDL assignment warning at lcd2.v(260): truncated value with size 32 to match size of target (4) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 260
+Warning (10230): Verilog HDL assignment warning at lcd2.v(285): truncated value with size 32 to match size of target (2) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 285
+Warning (10230): Verilog HDL assignment warning at lcd2.v(298): truncated value with size 32 to match size of target (4) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 298
+Warning (10230): Verilog HDL assignment warning at lcd2.v(323): truncated value with size 32 to match size of target (2) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 323
+Warning (10230): Verilog HDL assignment warning at lcd2.v(336): truncated value with size 32 to match size of target (4) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 336
+Warning (10230): Verilog HDL assignment warning at lcd2.v(361): truncated value with size 32 to match size of target (2) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 361
+Warning (10230): Verilog HDL assignment warning at lcd2.v(374): truncated value with size 32 to match size of target (4) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 374
+Warning (10230): Verilog HDL assignment warning at lcd2.v(399): truncated value with size 32 to match size of target (2) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 399
+Warning (10230): Verilog HDL assignment warning at lcd2.v(412): truncated value with size 32 to match size of target (4) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 412
+Warning (10230): Verilog HDL assignment warning at lcd2.v(437): truncated value with size 32 to match size of target (2) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 437
+Warning (10230): Verilog HDL assignment warning at lcd2.v(450): truncated value with size 32 to match size of target (4) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 450
+Warning (10230): Verilog HDL assignment warning at lcd2.v(475): truncated value with size 32 to match size of target (2) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 475
+Warning (10230): Verilog HDL assignment warning at lcd2.v(488): truncated value with size 32 to match size of target (4) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 488
+Warning (10230): Verilog HDL assignment warning at lcd2.v(513): truncated value with size 32 to match size of target (2) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 513
+Warning (10230): Verilog HDL assignment warning at lcd2.v(552): truncated value with size 32 to match size of target (2) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 552
+Warning (10230): Verilog HDL assignment warning at lcd2.v(592): truncated value with size 32 to match size of target (2) File: /home/aluno/Downloads/trabalho/lcd2.v Line: 592
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "lcd_rw" is stuck at GND File: /home/aluno/Downloads/trabalho/morseTranslator.v Line: 8
+    Warning (13410): Pin "lcd_on" is stuck at VCC File: /home/aluno/Downloads/trabalho/morseTranslator.v Line: 10
+    Warning (13410): Pin "lcd_db[7]" is stuck at GND File: /home/aluno/Downloads/trabalho/morseTranslator.v Line: 12
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 598 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 567 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
+    Info: Peak virtual memory: 447 megabytes
+    Info: Processing ended: Tue Jul  4 23:29:27 2023
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:23
+
+

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Jul  4 23:29:27 2023
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Standard Edition
+Revision Name : morseTranslator
+Top-level Entity Name : morseTranslator
+Family : Cyclone IV E
+Total logic elements : 567
+    Total combinational functions : 567
+    Dedicated logic registers : 215
+Total registers : 215
+Total pins : 31
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

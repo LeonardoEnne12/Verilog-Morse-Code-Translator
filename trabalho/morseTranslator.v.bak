@@ -1,0 +1,10 @@
+module morseTranslator(
+	input wire sound_in;
+	output reg sound_detected;
+)
+
+always @(posedge sound_in) begin
+	sound_detected <= 1;
+end
+
+endmodule
